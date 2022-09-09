@@ -130,7 +130,7 @@ const app = async (Obj) => {
         else if (Obj.joinTable){
             const rawJoin = async () => {
                 const [results] = await sequelize.query(
-                    "SELECT name, age, email, title AS favourite_movie, favTitleID AS id, FROM Users LEFT JOIN Movies ON Users.favTitleID = Movies.id"
+                    "SELECT name, age, email, title AS favourite_movie, favTitleID AS id FROM Users LEFT JOIN Movies ON Users.favTitleID = Movies.id"
                 )
                 console.table(results.map( (value) => (value)));
             } 
